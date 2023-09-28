@@ -126,7 +126,6 @@ export const BusinessFields = (): JSX.Element => {
   return (
     <div
       className='grid w-full mx-auto mx-1 px-1
-        md:px-5
         lg:w-full
       '
     >

@@ -12,7 +12,7 @@ const HomeCard = () => {
     >
       <Link
         href={contacts.tel.href}
-        className='relative z-10 sm:text-xl text-sm text-white hover:text-green-500'
+        className='relative z-10 sm:text-xl text-sm text-white hover:text-green-500 dark:hover:text-yellow-500'
       >
         {contacts.tel.value}
       </Link>
@@ -23,20 +23,17 @@ const HomeCard = () => {
       <p className='lg:text-3xl sm:text-xl text-md text-white transform -skew-x-12'>depuis 1998</p>
       <div className='bg-green-600 dark:bg-yellow-600 w-24 mt-2 m-auto h-0.5' />
       <div className='text-white mx-auto rounded-lg mt-5 w-52 sm:w-96 sm:leading-relaxed leading-tight'>
-        {options.map((option, i) => {
-          return (
-            <>
-              <Link
-                key={i}
-                href={option.href}
-                className='dark:hover:text-yellow-500 hover:text-green-500 sm:text-base text-sm'
-              >
-                {option.value}
-              </Link>
-              {i < options.length - 1 && ' - '}
-            </>
-          )
-        })}
+        {options.map((option, i) => (
+          <div key={i} className='inline-block'>
+            <Link
+              href={option.href}
+              className='dark:hover:text-yellow-500 hover:text-green-500 sm:text-base text-sm'
+            >
+              {option.value}
+            </Link>
+            {i < options.length - 1 && ' -'}&nbsp;
+          </div>
+        ))}
       </div>
     </div>
   )

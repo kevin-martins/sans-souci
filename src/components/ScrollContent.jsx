@@ -1,17 +1,23 @@
+import { useScroll, useTransform } from 'framer-motion';
 import React from 'react'
 
+const ImageContent = ({ imageUrl, imageAlt, i }) => (
+  <div className='lg:w-1/2'>
+    <img
+      className={`h-56 object-cover sm:h-72 md:h-96 lg:w-full lg:h-full ${i % 2 === 0 ? 'picture-deformation-l rounded-r-lg' : 'picture-deformation-r rounded-l-lg'} `}
+      src={imageUrl}
+      alt={imageAlt}
+    />
+  </div>
+)
+
 const ScrollContent = ({ field, i }) => {
-  console.log(field)
+  const { scrollYProgress } = useScroll()
+  const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
   return (
-    <div className={`relative overflow-hidden my-10`}>
-      <div className={i % 2 === 0 ? 'max-w-7xl mx-auto' : 'flex flex-col lg:flex-row max-w-7xl mx-auto'}>
-        <div className={`${i % 2 === 0 ? 'lg:absolute lg:inset-y-0 lg:right-0' : 'relative'} lg:w-1/2`}>
-          <img
-            className={`h-56 object-cover sm:h-72 md:h-96 lg:w-full lg:h-full rounded-lg ${i % 2 === 0 ? 'picture-deformation-l' : 'picture-deformation-r'} `}
-            src={field.image}
-            alt={field.alt}
-          />
-        </div>
+    <div className='relative overflow-hidden my-16'>
+      <div className='max-w-7xl mx-auto flex flex-col lg:flex-row max-w-7xl mx-auto'>
+        {i % 2 !== 0 && <ImageContent imageUrl={field.image} imageAlt={field.alt} i={i} />}
         <div className='relative z-10 pb-8 sm:pb-16 md:pb-20 lg:w-1/2'>
           {/* text */}
           <div className='relative pt-6 sm:px-6 lg:px-8'>
@@ -29,28 +35,59 @@ const ScrollContent = ({ field, i }) => {
                 <p className='mt-3 text-base text-slate-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 xl:text-xl lg:mx-0'>
                   {field.description}
                 </p>
-                <div className='mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start'>
-                  <div className='rounded-md shadow'>
-                    <a
-                      href={field.photo}
-                      className='w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 dark:bg-yellow-600 dark:hover:bg-yellow-700 md:py-4 xl:text-lg md:px-10'
-                    >
-                      {field.name}
-                    </a>
-                  </div>
-                  <div className='mt-3 sm:mt-0 sm:ml-3'>
-                    <a
-                      href={field.contact}
-                      className='w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-green-700 dark:text-yellow-700 bg-green-100 hover:bg-green-200 dark:bg-yellow-100 dark:hover:bg-yellow-200 md:py-4 xl:text-lg md:px-10'
-                    >
-                      {field.name}
-                    </a>
-                  </div>
+                <div className='mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start gap-3'>
+                  <a
+                    href={field.photo}
+                    className="px-6 py-4 relative z-0 flex items-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border-[1px] 
+                      border-neutral-700 px-4 py-1.5 font-medium
+                      text-slate-100 transition-all duration-300
+                      before:absolute before:inset-0
+                      before:-z-10 before:translate-y-[200%]
+                      before:scale-[2.5]
+                      before:rounded-[100%] before:bg-yellow-600
+                      before:transition-transform before:duration-1000
+                      before:content-[&quot;&quot;]
+                      hover:scale-105 hover:border-yellow-600 hover:text-slate-300
+                      hover:before:translate-y-[0%]
+                      active:scale-100"
+                  >
+                    voir les photos
+                  </a>
+                  <a
+                    href={field.photo}
+                    className="px-6 py-4 relative z-0 flex items-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border-[1px] 
+                      border-neutral-700 px-4 py-1.5 font-medium
+                      text-slate-300 transition-all duration-300
+                      before:absolute before:inset-0
+                      before:-z-10 before:translate-y-[0%]
+                      before:scale-[2.5]
+                      before:rounded-[100%] before:bg-yellow-600
+                      before:transition-transform before:duration-1000
+                      before:content-[&quot;&quot;]
+                      hover:scale-105 hover:border-yellow-600 hover:text-slate-100
+                      hover:before:translate-y-[-200%]
+                      active:scale-100"
+                  >
+                    prendre contact
+                  </a>
+                  {/* <a
+                    href={field.photo}
+                    className='w-content flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 dark:bg-yellow-600 dark:hover:bg-yellow-700 md:py-4 xl:text-lg md:px-10'
+                  >
+                    {field.name}
+                  </a> */}
+                  {/* <a
+                    href={field.contact}
+                    className='w-content flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-green-700 dark:text-yellow-700 bg-green-100 hover:bg-green-200 dark:bg-yellow-100 dark:hover:bg-yellow-200 md:py-4 xl:text-lg md:px-10'
+                  >
+                    {field.name}
+                  </a> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {i % 2 === 0 && <ImageContent imageUrl={field.image} imageAlt={field.alt} i={i} />}
       </div>
     </div >
   )

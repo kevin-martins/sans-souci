@@ -1,16 +1,11 @@
 {
-  "name": "front-end",
+  "name": "sans-souci",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@react-three/drei": "^9.99.0",
-    "@react-three/fiber": "^8.15.16",
     "@reduxjs/toolkit": "^1.8.1",
-    "@solana/web3.js": "^1.90.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
-    "@testing-library/user-event": "^14.1.1",
-    "bs58": "^5.0.0",
     "framer-motion": "^11.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -18,7 +13,6 @@
     "react-redux": "^8.0.1",
     "react-router-dom": "^6.22.1",
     "react-scripts": "5.0.1",
-    "three": "^0.161.0",
     "web-vitals": "^2.1.0"
   },
   "scripts": {

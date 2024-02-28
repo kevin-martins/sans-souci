@@ -5,26 +5,16 @@ const ScrollContent = ({ field, i }) => {
   return (
     <div className={`relative overflow-hidden my-10`}>
       <div className={i % 2 === 0 ? 'max-w-7xl mx-auto' : 'flex flex-col lg:flex-row max-w-7xl mx-auto'}>
-        <div className={i % 2 === 0 ? 'lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2' : 'relative lg:w-1/2'}>
+        <div className={`${i % 2 === 0 ? 'lg:absolute lg:inset-y-0 lg:right-0' : 'relative'} lg:w-1/2`}>
           <img
-            className='h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full'
+            className={`h-56 object-cover sm:h-72 md:h-96 lg:w-full lg:h-full rounded-lg ${i % 2 === 0 ? 'picture-deformation-l' : 'picture-deformation-r'} `}
             src={field.image}
             alt={field.alt}
           />
         </div>
-        <div className='relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-xl xl:max-w-2xl lg:w-full lg:pb-28 xl:pb-32'>
-          <svg
-            className={`${i % 2 === 0 ? 'right-0 translate-x-1/2 rotate-180 ' : 'left-0 -translate-x-1/2'} ' absolute hidden lg:block  inset-y-0 h-full w-48 text-sky-950 transform`}
-            fill='currentColor'
-            viewBox='0 0 100 100'
-            preserveAspectRatio='none'
-            aria-hidden='true'
-          >
-            <polygon points='50,0 100,0 50,100 0,100' className='bg-red-200'/>
-            <polygon points="0,0 100,0 100,100 50,100" />
-          </svg>
+        <div className='relative z-10 pb-8 sm:pb-16 md:pb-20 lg:w-1/2'>
           {/* text */}
-          <div className='relative pt-6 px-4 sm:px-6 lg:px-8'>
+          <div className='relative pt-6 sm:px-6 lg:px-8'>
             <div className='mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28'>
               <div className='sm:text-center lg:text-left'>
                 <h1 className='text-4xl tracking-tight font-extrabold text-slate-100 sm:text-5xl xl:text-6xl'>

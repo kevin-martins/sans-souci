@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import MovingCard from './components/MovingCard';
+import MovingCard from './MovingCard';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Modal from './components/Modal';
-import Notification from './features/notification/Notification';
+import Modal from './Modal';
+import Notification from '../features/notification/Notification';
 import { useDispatch } from 'react-redux';
-import { addNotification } from './features/dataSlice';
+import { addNotification } from '../features/dataSlice';
 import { useSelector } from 'react-redux';
-import Button from './components/Button';
-import Dropdown from './components/Dropdown';
-import NavBar from './components/NavBar';
-import Home from './pages/Home';
+import Button from './Button';
+import Dropdown from './Dropdown';
+import NavBar from './NavBar';
+import Home from '../pages/Home';
 
 export const App = () => {
   const [isOpen, setIsOpen] = useState(false);

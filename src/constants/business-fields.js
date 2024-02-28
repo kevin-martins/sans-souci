@@ -43,7 +43,7 @@ export const businessFields = [
     title: 'Des Portes pour',
     highlight: 'un Accueil Chaleureux',// une Entrée Accueillante
     name: 'porte et portail',
-    description: "Accueillez vos proches avec élégance et assurez la protection de votre foyer. Nos portes et portails sur mesure allient sécurité et esthétique.",//  pour créer un accueil qui reflète votre style
+    description: "Accueillez vos proches avec élégance et assurez à votre foyer la meilleur des protection. Nos portes et portails sur mesure allient sécurité et esthétique.",//  pour créer un accueil qui reflète votre style
     image: '/assets/portail.png',
     alt: "une porte d'entrée",
     photos: '/realisations/portes-et-portails',

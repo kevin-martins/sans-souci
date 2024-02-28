@@ -37,7 +37,7 @@ const Footer = () => {
       </div>
       <div className="max-w-7xl mx-auto">
         <HorizontalLine />
-        <p className="text-center mt-4 text-lg">&copy; {currentYear} Fermetures Sans Souci</p>
+        <p className="text-center mt-4 text-lg">Copyright &copy; {currentYear} - Fermeture Sans Souci</p>
       </div>
     </footer>
   )

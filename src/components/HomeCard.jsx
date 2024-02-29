@@ -6,6 +6,10 @@ import React from 'react'
 const HomeCard = () => {
   return (
     <div
+      style={{
+        transform: "translateZ(80px)",
+        transformStyle: "preserve-3d",
+      }}
       className='justify-self-center self-center text-center py-6 px-10 select-none z-40'
     >
       {/* <Link

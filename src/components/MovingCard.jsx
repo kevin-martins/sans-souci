@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-const ROTATION_RANGE = 16;
+const ROTATION_RANGE = 25;
 const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
 
 const MovingCard = ({ children }) => {
@@ -46,14 +46,14 @@ const MovingCard = ({ children }) => {
         rotateX,
         rotateY,
       }}
-      className="relative h-[350px] lg:w-[45rem] sm:w-[30rem] xs:w-[25rem] w-72 rounded-xl"// lg:w-[45rem] sm:w-[30rem] xs:w-[25rem] w-72 
+      className="relative h-[350px] lg:w-[45rem] sm:w-[30rem] xs:w-[25rem] w-72 rounded-xl bg-gradient-to-br from-slate-300 to-violet-300"// lg:w-[45rem] sm:w-[30rem] xs:w-[25rem] w-72 
     >
       <div
         style={{
           transform: "translateZ(75px)",
           transformStyle: "preserve-3d",
         }}
-        className="absolute inset-4 grid place-content-center rounded-xl shadow-lg bg-sky-900"// bg-gradient-to-br from-purple-900 to-purple-800
+        className="absolute inset-8 grid place-content-center rounded-xl shadow-lg bg-sky-900"// bg-gradient-to-br from-purple-900 to-purple-800
       >
         {children}
       </div>

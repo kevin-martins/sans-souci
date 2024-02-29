@@ -10,6 +10,7 @@ import Button from './Button';
 import Dropdown from './Dropdown';
 import NavBar from './NavBar';
 import Home from '../pages/Home';
+import PictureGallery from '../pages/PictureGallery';
 
 export const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,6 +37,7 @@ export const App = () => {
                 <div className='container mx-auto py-10'>
                   <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/galerie-photo" element={<PictureGallery />} />
                   </Routes>
                 </div>
               </div>

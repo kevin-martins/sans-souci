@@ -5,8 +5,8 @@ const PictureGallery = () => {
   const images = galeryImages
 
   return (
-    <div className='flex flex-col gap-10 overflow-x-hidden'>
-      <section className='grid grid-cols-4 pt-20 pb-10 gap-6'>
+    <div className='overflow-x-hidden'>
+      <section className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-20 pb-10 gap-6'>
       {images.map((image, i) => (
         <>
           <img

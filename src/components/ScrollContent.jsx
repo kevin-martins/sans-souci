@@ -39,7 +39,7 @@ const ScrollContent = ({ field, i }) => {
                   <a
                     href={field.photo}
                     className="px-6 py-4 relative z-0 flex items-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border-[1px] 
-                      border-neutral-700 px-4 py-1.5 font-medium
+                      border-neutral-500 px-4 py-1.5 font-medium
                       text-slate-100 transition-all duration-300
                       before:absolute before:inset-0
                       before:-z-10 before:translate-y-[200%]
@@ -56,7 +56,7 @@ const ScrollContent = ({ field, i }) => {
                   <a
                     href={field.photo}
                     className="px-6 py-4 relative z-0 flex items-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border-[1px] 
-                      border-neutral-700 px-4 py-1.5 font-medium
+                      border-yellow-600 px-4 py-1.5 font-medium
                       text-slate-300 transition-all duration-300
                       before:absolute before:inset-0
                       before:-z-10 before:translate-y-[0%]
@@ -64,7 +64,7 @@ const ScrollContent = ({ field, i }) => {
                       before:rounded-[100%] before:bg-yellow-600
                       before:transition-transform before:duration-1000
                       before:content-[&quot;&quot;]
-                      hover:scale-105 hover:border-yellow-600 hover:text-slate-100
+                      hover:scale-105 hover:border-neutral-500 hover:text-slate-100
                       hover:before:translate-y-[-200%]
                       active:scale-100"
                   >

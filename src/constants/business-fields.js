@@ -4,7 +4,7 @@ export const businessFields = [
     highlight: "un Espace Convivial",// un Espace Lumineux et Convivial
     name: 'véranda',
     description: "Transformez votre espace extérieur en un lieu lumineux et confortable. Profitez de la nature dans un cadre abrité et accueillant.",
-    image: '/assets/veranda.png',
+    image: '/assets/veranda_1.png',
     alt: "une véranda",
     photos: '/realisations/verandas',
     contact: '/contact#verandas',
@@ -14,7 +14,7 @@ export const businessFields = [
     highlight: 'Illuminer votre Intérieur',
     name: "fenêtre",
     description: "Fenêtres élégantes pour illuminer votre intérieur. Alliez esthétique et fonctionnalité avec nos solutions de fenêtres sur mesure.",
-    image: '/assets/fenetre.png',
+    image: '/assets/fenetre_1.png',
     alt: "une fenêtre",
     photos: '/realisations/fenetres',
     contact: '/contact#fenetre',
@@ -24,7 +24,7 @@ export const businessFields = [
     highlight: "Sécuriser votre Habitat",
     name: 'alarme et domotique',
     description: "Sécurité avancée et confort connecté. Surveillez et contrôlez votre domicile où que vous soyez, pour une tranquillité d'esprit totale.",
-    image: '/assets/store.png',
+    image: '/assets/veranda_4.png',
     alt: "une installation domotique",
     photos: '/realisations/alarmes-et-domotique',
     contact: '/contact#alarmes-et-domotique',
@@ -34,7 +34,7 @@ export const businessFields = [
     highlight: 'Sublimer vos Espaces',
     name: "store",
     description: "Alliant esthétisme et fonctionnalité, notre gamme de stores vous offre la possibilité de régler la luminosité selon vos préférences.",
-    image: '/assets/garage.png',
+    image: '/assets/porte_garage_1.png',
     alt: 'un store',
     photos: '/realisations/stores',
     contact: '/contact#stores',
@@ -44,7 +44,7 @@ export const businessFields = [
     highlight: 'un Accueil Chaleureux',// une Entrée Accueillante
     name: 'porte et portail',
     description: "Accueillez vos proches avec élégance et assurez à votre foyer la meilleur des protection. Nos portes et portails sur mesure allient sécurité et esthétique.",//  pour créer un accueil qui reflète votre style
-    image: '/assets/portail.png',
+    image: '/assets/portail_1.png',
     alt: "une porte d'entrée",
     photos: '/realisations/portes-et-portails',
     contact: '/contact#portes-et-portails',
@@ -54,7 +54,7 @@ export const businessFields = [
     highlight: 'Assurer votre Confort',// la Sécurité et le Confort, un Confort Assuré
     name: 'volet roulant',
     description: "Contrôlez la lumière et l'obscurité à votre convenance. Nos volets roulants offrent une solution pratique et élégante.",
-    image: '/assets/portail.png',
+    image: '/assets/porte_entree_1.png',
     alt: 'des volets',
     photos: '/realisations/volets-roulants',
     contact: '/contact#volets-roulants',

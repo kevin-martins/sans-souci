@@ -1,5 +1,6 @@
-import { useScroll, useTransform } from 'framer-motion';
-import React from 'react'
+import { motion, useAnimation, useInView, useScroll, useTransform } from 'framer-motion';
+import { businessFields } from '../constants/business-fields'
+import React, { useEffect, useRef } from 'react'
 
 const ImageContent = ({ imageUrl, imageAlt, i }) => (
   <div className='lg:w-1/2 h-full'>
@@ -11,11 +12,15 @@ const ImageContent = ({ imageUrl, imageAlt, i }) => (
   </div>
 )
 
-const ScrollContent = ({ field, i }) => {
-  const { scrollYProgress } = useScroll()
-  const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
+const ContentElement = ({ field, fromRight, fromLeft, i }) => {
   return (
-    <div className='relative overflow-hidden max-w-6xl mx-auto flex flex-col lg:flex-row my-20'>
+    <motion.div
+      className='relative overflow-hidden max-w-6xl mx-auto flex flex-col lg:flex-row'
+      // initial='hidden'
+      // variants={elementVariants}
+      // transition={{ delay: 0.3 }}
+      style={{ translateX: i % 2 !== 0 ? fromRight : fromLeft }}
+    >
       {i % 2 !== 0 && <ImageContent imageUrl={field.image} imageAlt={field.alt} i={i} />}
       <div className='relative z-10 lg:w-1/2 '>{/* pb-8 sm:pb-16 md:pb-20 */}
         {/* text */}
@@ -86,8 +91,37 @@ const ScrollContent = ({ field, i }) => {
         </div>
       </div>
       {i % 2 === 0 && <ImageContent imageUrl={field.image} imageAlt={field.alt} i={i} />}
-    </div >
+    </motion.div >
   )
 }
 
-export default ScrollContent
+const ScrollContent = () => {
+  const wrapperRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: wrapperRef,
+    offset: ['start center', 'center center']
+  })
+  const fromRight = useTransform(scrollYProgress, [0, 1], ['-20%', '0%'])
+  const fromLeft = useTransform(scrollYProgress, [0, 1], ['20%', '0%'])
+
+  return (
+    <motion.section
+      ref={wrapperRef}
+      className='flex flex-col gap-12 my-20'
+    >
+      {businessFields.map((field, i) => (
+        <ContentElement key={i} field={field} fromRight={fromRight} fromLeft={fromLeft} i={i} />
+      ))}
+    </motion.section>
+  )
+}
+
+export default ScrollContent;
+
+// const elementVariants = {
+//   hidden:{ opacity: 0, y: 75 },
+//   visible: {
+//     opacity: 1,
+//     y: 0
+//   }
+// }

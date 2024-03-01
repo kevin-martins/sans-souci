@@ -1,18 +1,18 @@
 export const partners = [
   {
-    url: 'https://www.batistore.fr/img/batistore.png',
+    url: '/logo/batistore.svg',
     alt: 'logo de Batistore'
   },
   {
-    url: 'https://www.somfy.fr/common/b2c_v5/img/logo_somfy_2.svg',
+    url: '/logo/somfy.svg',
     alt: 'logo de Somfy'
   },
   {
-    url: 'https://www.janneau.com/themes/custom/drup_theme/logo.svg',
+    url: '/logo/janneau.svg',
     alt: 'logo de Janneau'
   },
   {
-    url: 'https://www.batiproduits.com/medias/5/6/5/004522565_logo_header_bloc_stand.jpg',
+    url: '/logo/gp-portail.svg',
     alt: 'logo de GP Portail'
   }
 ]

@@ -12,10 +12,19 @@ const ImageContent = ({ imageUrl, imageAlt, i }) => (
   </div>
 )
 
-const ContentElement = ({ field, fromRight, fromLeft, i }) => {
+const ContentElement = ({ field, i }) => {
+  const wrapperRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: wrapperRef,
+    offset: ['start end', 'center center']
+  })
+  const fromRight = useTransform(scrollYProgress, [0, 1], ['-20%', '0%'])
+  const fromLeft = useTransform(scrollYProgress, [0, 1], ['20%', '0%'])
+
   return (
     <motion.div
       className='relative overflow-hidden max-w-6xl mx-auto flex flex-col lg:flex-row'
+      ref={wrapperRef}
       // initial='hidden'
       // variants={elementVariants}
       // transition={{ delay: 0.3 }}
@@ -96,21 +105,20 @@ const ContentElement = ({ field, fromRight, fromLeft, i }) => {
 }
 
 const ScrollContent = () => {
-  const wrapperRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: wrapperRef,
-    offset: ['start center', 'center center']
-  })
-  const fromRight = useTransform(scrollYProgress, [0, 1], ['-20%', '0%'])
-  const fromLeft = useTransform(scrollYProgress, [0, 1], ['20%', '0%'])
+  // const wrapperRef = useRef(null)
+  // const { scrollYProgress } = useScroll({
+  //   target: wrapperRef,
+  //   offset: ['start center', 'center center']
+  // })
+  // const fromRight = useTransform(scrollYProgress, [0, 1], ['-20%', '0%'])
+  // const fromLeft = useTransform(scrollYProgress, [0, 1], ['20%', '0%'])
 
   return (
     <motion.section
-      ref={wrapperRef}
       className='flex flex-col gap-12 my-20'
     >
       {businessFields.map((field, i) => (
-        <ContentElement key={i} field={field} fromRight={fromRight} fromLeft={fromLeft} i={i} />
+        <ContentElement key={i} field={field} i={i} />
       ))}
     </motion.section>
   )
@@ -118,10 +126,10 @@ const ScrollContent = () => {
 
 export default ScrollContent;
 
-// const elementVariants = {
-//   hidden:{ opacity: 0, y: 75 },
-//   visible: {
-//     opacity: 1,
-//     y: 0
-//   }
-// }
+const elementVariants = {
+  hidden:{ opacity: 0, y: 75 },
+  visible: {
+    opacity: 1,
+    y: 0
+  }
+}

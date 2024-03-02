@@ -6,6 +6,7 @@ import ScrollContent from '../components/ScrollContent'
 import HorizontalScroll from '../components/HorizontalScroll'
 import SwipeCarousel from '../components/test'
 import Partners from '../components/Partners'
+import TextSection from '../components/TextSection'
 
 const Home = () => {
   return (
@@ -19,21 +20,24 @@ const Home = () => {
           </> */}
         </MovingCard>
       </div>
-      <div class="w-full mt-8 mb-12 transform">
-        <h1 class="text-slate-100 text-5xl w-max mx-auto skew-x-12">l'Entreprise</h1>
-        <div class="bg-yellow-600 w-44 mt-3 m-auto h-0.5"></div>
-      </div>
-      <p class="text-slate-300 w-2/3 text-center mx-auto lg:text-lg text-sm">
-        Sans Souci, votre spécialiste pour effectuer la pose de volets roulants en Essonne ! 
-        Confiez-nous votre projet et profitez de nos 26 années d'expériences dans ce domaine 
-        pour assurer la sécurité de votre habitation. Forts de notre expérience, nous réalisons 
-        également votre installation domotique, que vous soyez sur Évry ou dans l'Essonne. 
-        Nous vous garantissons plusieurs prestations soignées réalisées dans le respect des 
-        délais pour vous apporter entière satisfaction. Nous sommes à votre écoute. Contactez-nous !
-      </p>
+      <TextSection
+        title="l'Entreprise"
+        text="Sans Souci, votre spécialiste pour effectuer la pose de volets roulants en Essonne ! 
+          Confiez-nous votre projet et profitez de nos 26 années d'expériences dans ce domaine 
+          pour assurer la sécurité de votre habitation. Forts de notre expérience, nous réalisons 
+          également votre installation domotique, que vous soyez sur Évry ou dans l'Essonne. 
+          Nous vous garantissons plusieurs prestations soignées réalisées dans le respect des 
+          délais pour vous apporter entière satisfaction. Nous sommes à votre écoute. Contactez-nous !"
+      />
       <ScrollContent />
       {/* <SwipeCarousel /> */}
       {/* <HorizontalScroll /> */}
+      <TextSection
+        title='Partners'
+          text="Voici un aperçu des entreprises avec lesquelles nous collaborons, chacune étant 
+            un expert reconnu dans son domaine respectif. Elles s'engagent à offrir le meilleur 
+            rapport qualité-prix, soutenu par des garanties pouvant s'étendre sur plus de 10 ans."
+      />
       <Partners />
       <Footer />
     </>

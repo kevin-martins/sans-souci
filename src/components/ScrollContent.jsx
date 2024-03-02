@@ -1,6 +1,6 @@
 import { motion, useAnimation, useInView, useScroll, useTransform } from 'framer-motion';
 import { businessFields } from '../constants/business-fields'
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 
 const ImageContent = ({ imageUrl, imageAlt, i }) => (
   <div className='lg:w-1/2 h-full'>
@@ -84,18 +84,6 @@ const ContentElement = ({ field, i }) => {
             >
               prendre contact
             </a>
-            {/* <a
-              href={field.photo}
-              className='w-content flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 dark:bg-yellow-600 dark:hover:bg-yellow-700 md:py-4 xl:text-lg md:px-10'
-            >
-              {field.name}
-            </a> */}
-            {/* <a
-              href={field.contact}
-              className='w-content flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-green-700 dark:text-yellow-700 bg-green-100 hover:bg-green-200 dark:bg-yellow-100 dark:hover:bg-yellow-200 md:py-4 xl:text-lg md:px-10'
-            >
-              {field.name}
-            </a> */}
           </div>
         </div>
       </div>
@@ -105,14 +93,6 @@ const ContentElement = ({ field, i }) => {
 }
 
 const ScrollContent = () => {
-  // const wrapperRef = useRef(null)
-  // const { scrollYProgress } = useScroll({
-  //   target: wrapperRef,
-  //   offset: ['start center', 'center center']
-  // })
-  // const fromRight = useTransform(scrollYProgress, [0, 1], ['-20%', '0%'])
-  // const fromLeft = useTransform(scrollYProgress, [0, 1], ['20%', '0%'])
-
   return (
     <motion.section
       className='flex flex-col gap-12 my-20'

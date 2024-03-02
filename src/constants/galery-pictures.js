@@ -1,80 +1,101 @@
 export const galeryImages = [
   {
-    url: "/assets/fenetre_1.png",
+    url: "fenetre_1",
   },
   {
-    url: "/assets/fenetre_2.png",
+    url: "fenetre_2",
   },
   {
-    url: "/assets/fenetre_3.png",
+    url: "fenetre_3",
   },
   {
-    url: "/assets/fenetre_4.png",
+    url: "fenetre_4",
   },
   {
-    url: "/assets/fenetre_5.png",
+    url: "fenetre_5",
   },
   {
-    url: "/assets/fenetre_6.png",
+    url: "fenetre_6",
   },
   {
-    url: "/assets/fenetre_7.png",
+    url: "fenetre_7",
   },
   {
-    url: "/assets/fenetre_8.png",
+    url: "fenetre_8",
   },
   {
-    url: "/assets/fenetre_9.png",
+    url: "fenetre_9",
   },
   {
-    url: "/assets/fenetre_10.png",
+    url: "fenetre_10",
   },
   {
-    url: "/assets/portail_1.png",
+    url: "portail_1",
   },
   {
-    url: "/assets/portail_2.png",
+    url: "portail_2",
   },
   {
-    url: "/assets/portail_3.png",
+    url: "portail_3",
   },
   {
-    url: "/assets/portail_4.png",
+    url: "portail_4",
   },
   {
-    url: "/assets/porte_entree_1.png",
+    url: "porte_entree_1",
   },
   {
-    url: "/assets/porte_entree_2.png",
+    url: "porte_entree_2",
   },
   {
-    url: "/assets/porte_entree_3.png",
+    url: "porte_entree_3",
   },
   {
-    url: "/assets/porte_entree_4.png",
+    url: "porte_entree_4",
   },
   {
-    url: "/assets/porte_garage_1.png",
+    url: "porte_garage_1",
   },
   {
-    url: "/assets/porte_garage_2.png",
+    url: "porte_garage_2",
   },
   {
-    url: "/assets/porte_garage_3.png",
+    url: "porte_garage_3",
   },
   {
-    url: "/assets/porte_garage_4.png",
+    url: "porte_garage_4",
   },
   {
-    url: "/assets/veranda_1.png",
+    url: "veranda_1",
   },
   {
-    url: "/assets/veranda_2.png",
+    url: "veranda_2",
   },
   {
-    url: "/assets/veranda_3.png",
+    url: "veranda_3",
   },
   {
-    url: "/assets/veranda_4.png",
+    url: "veranda_4",
+  },
+  {
+    url: "volet_1",
+  },
+  {
+    url: "volet_roulant_1",
+  },
+  {
+    url: "volet_roulant_2",
+  },
+  {
+    url: "volet_roulant_3",
+  },
+  {
+    url: "volet_roulant_4",
+  },
+  {
+    url: "volet_roulant_5",
+  },
+  {
+    url: "volet_roulant_6",
   },
 ]

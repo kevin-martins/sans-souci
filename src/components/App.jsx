@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
-import MovingCard from './MovingCard';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Modal from './Modal';
-import Notification from '../features/notification/Notification';
 import { useDispatch } from 'react-redux';
 import { addNotification } from '../features/dataSlice';
 import { useSelector } from 'react-redux';
-import Button from './Button';
-import Dropdown from './Dropdown';
 import NavBar from './NavBar';
 import Home from '../pages/Home';
 import PictureGallery from '../pages/PictureGallery';
@@ -42,20 +37,6 @@ export const App = () => {
                 </div>
               </div>
           </BrowserRouter>
-          {/* <div className='h-screen'>
-            <Dropdown />
-            <Button text='connexion' onClick={onClick} />
-          </div>
-          <div className="grid w-full place-content-center">
-            {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} />}
-          </div>
-          <div className="flex flex-col gap-1 w-72 fixed top-2 right-2 z-50 pointer-events-none">
-            <AnimatePresence>
-              {notifications.map(notification => (
-                <Notification key={notification.id} {...notification} />
-              ))}
-            </AnimatePresence>
-          </div> */}
         </main>
     </>
   );

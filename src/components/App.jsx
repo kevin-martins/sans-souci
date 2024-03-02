@@ -34,7 +34,7 @@ export const App = () => {
           <BrowserRouter>
             <NavBar />
               <div className='min-h-screen'>
-                <div className='container mx-auto py-10'>
+                <div className='container overflow-x-hidden mx-auto'>
                   <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/galerie-photo" element={<PictureGallery />} />

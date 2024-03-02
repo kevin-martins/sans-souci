@@ -1,9 +1,10 @@
-import { partners } from "../constants/partners";
+import React from 'react'
+import { partners } from "../constants/partners"
 
 const Partners = () => {
   return (
     <div className='flex flex-wrap gap-6 justify-center pt-2'>
-      {partners.map((partner, i) => {
+      {partners.map((partner, i) => (
         <img
           key={i}
           src={partner.url}
@@ -11,7 +12,7 @@ const Partners = () => {
           width={200}
           className='rounded-full'
         />
-      })}
+      ))}
     </div>
   )
 }

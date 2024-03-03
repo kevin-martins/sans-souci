@@ -1,18 +1,26 @@
 export const partners = [
   {
-    url: '/logos/batistore.svg',
+    url: 'batistore',
     alt: 'logo de Batistore'
   },
   {
-    url: '/logos/somfy.svg',
+    url: 'somfy',
     alt: 'logo de Somfy'
   },
   {
-    url: '/logos/janneau.svg',
+    url: 'janneau',
     alt: 'logo de Janneau'
   },
   {
-    url: '/logos/gp-portail.svg',
+    url: 'gp-portail',
     alt: 'logo de GP Portail'
+  },
+  {
+    url: 'bubendorff',
+    alt: 'logo de Bubendordd'
+  },
+  {
+    url: 'profalux',
+    alt: 'logo de Profalux'
   }
 ]

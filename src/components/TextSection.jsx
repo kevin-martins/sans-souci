@@ -12,13 +12,13 @@ export const TextSection = ({ title, text }) => {
         opacity: isInView ? 1 : 0,
         transition: "all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1)"
       }}
-      className='w-full mt-12 pb-10 transform'
+      className='w-full mt-12 pb-10'
     >
-      <h1 className='text-5xl w-max mx-auto skew-x-12'>
+      <h1 className='text-3xl md:text-5xl w-max mx-auto skew-x-12'>
         {title}
       </h1>
-      <div className='bg-yellow-600 w-32 mt-3 m-auto h-[.3px]' />
-      <p className='text-slate-400 mt-8 max-w-5xl mx-auto text-center'>
+      <div className='bg-yellow-600 w-24 md:w-32 mt-3 m-auto h-[.3px]' />
+      <p className='text-slate-400 mt-8 md:max-w-5xl px-12 text-sm md:text-lg mx-auto text-justify'>
         {text}
       </p>
     </motion.section>

@@ -17,7 +17,7 @@ const PictureGallery = () => {
             variants={imageVariants}
             src={'/assets/' + image.url + '.png'}
             alt={image.url}
-            className='galery-deformation hover:rounded-lg ease-in-out transition-all duration-500 scale-95 hover:scale-105'
+            className='hover:rounded-lg ease-in-out transition-all duration-500 scale-95 hover:scale-105'
           />
         ))}
       </motion.section>

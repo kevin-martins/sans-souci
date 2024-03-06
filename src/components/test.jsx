@@ -84,17 +84,17 @@ export const SwipeCarousel = () => {
 const Images = ({ imgIndex }) => {
   return (
     <>
-      {imgs.map((imgSrc, idx) => {
+      {imgs.map((imgSrc, i) => {
         return (
           <motion.div
-            key={idx}
+            key={i}
             style={{
               backgroundImage: `url(${imgSrc})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
             animate={{
-              scale: imgIndex === idx ? 0.95 : 0.85,
+              scale: imgIndex === i ? 0.95 : 0.85,
             }}
             transition={SPRING_OPTIONS}
             className="aspect-video w-screen shrink-0 rounded-xl bg-neutral-800 object-cover"
@@ -108,13 +108,13 @@ const Images = ({ imgIndex }) => {
 const Dots = ({ imgIndex, setImgIndex }) => {
   return (
     <div className="mt-4 flex w-full justify-center gap-2">
-      {imgs.map((_, idx) => {
+      {imgs.map((_, i) => {
         return (
           <button
-            key={idx}
-            onClick={() => setImgIndex(idx)}
+            key={i}
+            onClick={() => setImgIndex(i)}
             className={`h-3 w-3 rounded-full transition-colors ${
-              idx === imgIndex ? "bg-neutral-50" : "bg-neutral-500"
+              i === imgIndex ? "bg-neutral-50" : "bg-neutral-500"
             }`}
           />
         );

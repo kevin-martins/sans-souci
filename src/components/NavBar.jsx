@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
     <nav className="fixed z-50 left-[50%] top-8 flex w-fit -translate-x-[50%] items-center gap-6 rounded-lg border-[1px] border-neutral-700 hover:border-neutral-500 bg-neutral-900 p-2 text-sm text-neutral-500">
       <Link to="/">
-        <svg width="24" length="auto" viewBox="0 0 50 39" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-2 fill-neutral-50">
+        <svg width="24" length="auto" viewBox="0 0 50 39" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-2 fill-neutral-50">
           <path d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z" stopColor="#000000"></path>
           <path d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z" stopColor="#000000"></path>
         </svg>
@@ -37,8 +37,8 @@ const NavBar = () => {
           uppercase text-violet-300 transition-all
           
           before:absolute before:inset-0
-          before:-z-10 before:translate-x-[-150%]
-          before:translate-y-[-150%] before:scale-[2.5]
+          before:-z-10 before:scale-[2.5]
+          before:translate-x-[-150%] before:translate-y-[-150%]
           before:rounded-[100%] before:bg-violet-300
           before:transition-transform before:duration-500
           before:content-[&quot;&quot;]

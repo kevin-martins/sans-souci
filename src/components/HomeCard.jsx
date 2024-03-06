@@ -18,7 +18,7 @@ const HomeCard = () => {
       >
         {contacts.tel.value}
       </Link> */}
-      <h1 className='lg:text-8xl sm:text-6xl text-4xl text-white font-bold transform scale-y-125'>Fermetures</h1>
+      <h1 className='lg:text-8xl text-4xl text-black font-bold transform scale-y-125'>Fermetures</h1>
       <h2 className='text-yellow-500 lg:text-6xl sm:text-4xl text-2xl font-bold'>
         Sans Souci
       </h2>

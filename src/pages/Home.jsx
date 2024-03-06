@@ -1,23 +1,79 @@
 import React, { useEffect, useRef } from 'react'
 import MovingCard from '../components/MovingCard'
-import HomeCard from '../components/HomeCard'
 import Footer from '../components/Footer'
 import ScrollContent from '../components/ScrollContent'
 import HorizontalScroll from '../components/HorizontalScroll'
 import SwipeCarousel from '../components/test'
 import Partners from '../components/Partners'
 import TextSection from '../components/TextSection'
+import Reviews from '../components/Reviews'
+import HomeCard from '../components/HomeCard'
+import { RiCheckLine } from 'react-icons/ri'
+import { Helmet } from 'react-helmet-async'
+import FAQs from '../components/FAQs'
+import { motion } from 'framer-motion'
+
+const data = [
+  {
+    text: "Devis gratuit 100% gratuit !",
+  },
+  {
+    text: "Installation et paramétrage d'alarmes et de systèmes domotiques",
+  },
+  {
+    text: "Remplacement de vitres et vitrines",
+  },
+  {
+    text: "Pose, réglage et réparation de store et volet roulant",
+  },
+  {
+    text: "Intervention en urgence 24/24",
+  }
+]
+
+const infoVariants = {
+  hidden: { y: -30, opacity: 0 },
+  show: { y: 0, opacity: 1 }
+}
+
+const Elements = (d) => {
+  return (
+    <motion.li
+      variants={infoVariants}
+      className="flex flex-row gap-[.5px]"
+    >
+      <RiCheckLine fill='green' className='my-auto' size={20} />
+      <p>{d.text}</p>
+    </motion.li>
+  )
+}
+
+const wrapperVariants = {
+  show: {
+    transition: { staggerChildren: 0.25 }
+  }
+}
 
 const Home = () => {
   return (
     <>
-      <div className="grid w-full h-screen place-content-center px-4 py-20">
+      <div className="grid lg:grid-cols-2 h-screen place-content-center lg:px-4 lg:py-20">
+        <div className='hidden lg:block lg:m-auto'>
+          <h1 className='text-3xl scale-y-125'>Fermeture Sans Souci,</h1>
+          <p className='text-xl'>Votre professionnel de la fermeture en Essonnes</p>
+          <motion.ul
+            variants={wrapperVariants}
+            initial='hidden'
+            animate='show'
+            className='flex flex-col text-slate-200'
+          >
+            {data.map((d, i) => (
+              <Elements key={i} {...d} />
+            ))}
+          </motion.ul>
+        </div>
         <MovingCard>
           <HomeCard />
-            {/* <Button text='connexion' onClick={onClick} /> */}
-          {/* <>
-            <h1 className='text-white text-center py-5 text-3xl'>SOTNFT</h1>
-          </> */}
         </MovingCard>
       </div>
       <TextSection
@@ -33,12 +89,15 @@ const Home = () => {
       {/* <SwipeCarousel /> */}
       {/* <HorizontalScroll /> */}
       <TextSection
-        title='Partners'
+        title='Nos Partenaires'
           text="Voici un aperçu des entreprises avec lesquelles nous collaborons, chacune étant 
             un expert reconnu dans son domaine respectif. Elles s'engagent à offrir le meilleur 
-            rapport qualité-prix, soutenu par des garanties pouvant s'étendre sur plus de 10 ans."
+            rapport qualité-prix, soutenu par des garanties inclus pouvant s'étendre sur plus de 10 ans."
       />
       <Partners />
+      {/* <i className="text-yellow-500 w-10 fas fa-star" style={{ fontSize: '1rem' }} /> */}
+      <Reviews />
+      <FAQs />
       <Footer />
     </>
   )

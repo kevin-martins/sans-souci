@@ -3,7 +3,7 @@ import { businessFields } from '../constants/business-fields'
 import React, { useRef } from 'react'
 
 const ImageContent = ({ imageUrl, imageAlt, i }) => (
-  <div className='relative lg:w-1/2 h-full'>
+  <div className='relative lg:w-1/2 px-2 md:px-10 lg:p-0'>
     <img
       className={`object-cover rounded-lg ${i % 2 === 0 ? 'picture-deformation-r lg:rounded-r-lg' : 'picture-deformation-l lg:rounded-l-lg'} `}
       src={imageUrl}
@@ -27,17 +27,10 @@ const ContentElement = ({ field, i }) => {
     <motion.div
       className='relative overflow-hidden max-w-6xl mx-auto lg:my-auto flex flex-col lg:flex-row'
       ref={wrapperRef}
-      // initial='hidden'
-      // variants={elementVariants}
-      // transition={{ delay: 0.3 }}
       style={{ translateX: isOdd ? fromRight : fromLeft }}
     >
       {isOdd && <ImageContent imageUrl={field.image} imageAlt={field.alt} i={i} />}
-      <div className='absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 lg:relative lg:top-auto lg:right-auto lg:translate-y-1/4 lg:translate-x-0 z-10 lg:w-1/2 '>{/* pb-8 sm:pb-16 md:pb-20 */}
-        {/* text */}
-        {/* <div className='relative pt-6 sm:px-6 lg:px-8'>
-          <div className='mt-10 mx-auto px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28'>
-            <div className='sm:text-center lg:text-left '> */}
+      <div className='absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 lg:relative lg:top-auto lg:right-auto lg:translate-y-1/4 lg:translate-x-0 z-10 lg:w-1/2 '>
         <div className='flex flex-col h-full text-center items-center rounded-lg px-12 py-3 bg-slate-800/70 lg:bg-transparent'>
           <h1 className='text-4xl tracking-tight font-extrabold text-slate-100 lg:text-left xl:text-6xl'>
             <span className='block xl:inline'>
@@ -48,10 +41,10 @@ const ContentElement = ({ field, i }) => {
               {field.highlight}
             </span>
           </h1>
-          <p className='mt-3 text-base text-slate-200 lg:text-slate-400 sm:mt-5 md:text-lg sm:max-w-xl lg:text-left md:mt-5 xl:text-xl'>
+          <p className='mt-3 text-xs sm:text-base mx-5 text-slate-200 lg:text-slate-400 sm:mt-5 md:text-lg sm:max-w-xl lg:text-left md:mt-5 xl:text-xl'>
             {field.description}
           </p>
-          <div className='mt-5 sm:mt-8 sm:flex justify-center lg:justify-start gap-3'>
+          <div className='mt-5 sm:mt-8 flex justify-center lg:justify-start gap-3'>
             <a
               href={field.photo}
               className="px-7 py-4 relative z-0 flex items-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border-[1px] 
@@ -107,11 +100,3 @@ const ScrollContent = () => {
 }
 
 export default ScrollContent;
-
-const elementVariants = {
-  hidden:{ opacity: 0, y: 75 },
-  visible: {
-    opacity: 1,
-    y: 0
-  }
-}

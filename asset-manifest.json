@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sans-souci/static/css/main.42530c94.css",
+    "main.js": "/sans-souci/static/js/main.444adc05.js",
+    "index.html": "/sans-souci/index.html",
+    "main.42530c94.css.map": "/sans-souci/static/css/main.42530c94.css.map",
+    "main.444adc05.js.map": "/sans-souci/static/js/main.444adc05.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42530c94.css",
+    "static/js/main.444adc05.js"
+  ]
+}

@@ -3,11 +3,9 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 const questionVariants = {
   open: {
-    // rotate: 180,
     color: "rgba(3, 6, 23, 0)"
   },
   close: {
-    // rotate: 0,
     color: "rgb(255, 255, 255)"
   }
 }
@@ -37,7 +35,7 @@ const QuestionAnswer = ({ question, answer }) => {
         <motion.span
           variants={questionVariants}
           animate={isClicked ? 'open': 'close' }
-          className="bg-gradient-to-r from-violet-600 to-indigo-500 bg-clip-text text-left text-lg font-medium"
+          className="bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-left text-lg font-medium"
         >
           {question}
         </motion.span>
@@ -55,8 +53,7 @@ const QuestionAnswer = ({ question, answer }) => {
           initial={{ height: 0, marginBottom: 0 }}
           animate={{ height: "fit-content", marginBottom: 24 }}
           exit={{ height: 0, marginBottom: 0 }}
-          // variants={{ show: { height: "fit-content", marginBottom: 24 } }}
-          className="overflow-hidden text-slate-300" //height: 0px; margin-bottom: 0px; => height: fit-content; margin-bottom: 24px;
+          className="overflow-hidden text-slate-300"
         >
           <p>{answer}</p>
         </motion.div>}

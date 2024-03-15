@@ -1,9 +1,7 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import MovingCard from '../components/MovingCard'
 import Footer from '../components/Footer'
 import ScrollContent from '../components/ScrollContent'
-import HorizontalScroll from '../components/HorizontalScroll'
-import SwipeCarousel from '../components/test'
 import Partners from '../components/Partners'
 import TextSection from '../components/TextSection'
 import Reviews from '../components/Reviews'
@@ -11,7 +9,7 @@ import HomeCard from '../components/HomeCard'
 import { RiCheckLine } from 'react-icons/ri'
 import { Helmet } from 'react-helmet-async'
 import FAQs from '../components/FAQs'
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 const data = [
   {
@@ -57,10 +55,14 @@ const wrapperVariants = {
 const Home = () => {
   return (
     <>
+      <Helmet>
+        <title>Fermeture Sans Souci - Votre professionnel de la fermeture en Essonnes</title>
+        <meta name="description" content="Devis gratuit 100% gratuit ! Installation et paramétrage d'alarmes et de systèmes domotiques. Remplacement de vitres et vitrines. Pose, réglage et réparation de store et volet roulant. Intervention en urgence 24/24." />
+      </Helmet>
       <div className="grid lg:grid-cols-2 h-screen place-content-center lg:px-4 lg:py-20">
         <div className='hidden lg:block lg:m-auto'>
           <h1 className='text-3xl scale-y-125'>Fermeture Sans Souci,</h1>
-          <p className='text-xl'>Votre professionnel de la fermeture en Essonnes</p>
+          <h2 className='text-xl'>Votre professionnel de la fermeture en Essonnes</h2>
           <motion.ul
             variants={wrapperVariants}
             initial='hidden'
@@ -77,6 +79,7 @@ const Home = () => {
         </MovingCard>
       </div>
       <TextSection
+        id='company'
         title="l'Entreprise"
         text="Sans Souci, votre spécialiste pour effectuer la pose de volets roulants en Essonne ! 
           Confiez-nous votre projet et profitez de nos 26 années d'expériences dans ce domaine 
@@ -86,16 +89,14 @@ const Home = () => {
           délais pour vous apporter entière satisfaction. Nous sommes à votre écoute. Contactez-nous !"
       />
       <ScrollContent />
-      {/* <SwipeCarousel /> */}
-      {/* <HorizontalScroll /> */}
       <TextSection
+        id='partners'
         title='Nos Partenaires'
-          text="Voici un aperçu des entreprises avec lesquelles nous collaborons, chacune étant 
-            un expert reconnu dans son domaine respectif. Elles s'engagent à offrir le meilleur 
-            rapport qualité-prix, soutenu par des garanties inclus pouvant s'étendre sur plus de 10 ans."
+        text="Voici un aperçu des entreprises avec lesquelles nous collaborons, chacune étant 
+          un expert reconnu dans son domaine respectif. Elles s'engagent à offrir le meilleur 
+          rapport qualité-prix, soutenu par des garanties inclus pouvant s'étendre sur plus de 10 ans."
       />
       <Partners />
-      {/* <i className="text-yellow-500 w-10 fas fa-star" style={{ fontSize: '1rem' }} /> */}
       <Reviews />
       <FAQs />
       <Footer />

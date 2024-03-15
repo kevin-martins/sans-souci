@@ -11,3 +11,7 @@ export const getIntervalYear = () => {
 export const getDiffYear = (from) => {
     return new Date().getFullYear() - from
 }
+
+export const imagePath = (imgName, folderName = 'assets', ext = 'webp') => {
+    return `${process.env.PUBLIC_URL}/${folderName}/${imgName}.${ext}`
+}

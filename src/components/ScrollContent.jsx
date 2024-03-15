@@ -1,13 +1,15 @@
 import { motion, useAnimation, useInView, useScroll, useTransform } from 'framer-motion';
 import { businessFields } from '../constants/business-fields'
 import React, { useRef } from 'react'
+import { imagePath } from '../helpers/helpers';
 
-const ImageContent = ({ imageUrl, imageAlt, i }) => (
+const ImageContent = ({ filename, imageAlt, i }) => (
   <div className='relative lg:w-1/2 px-2 md:px-10 lg:p-0'>
     <img
       className={`object-cover rounded-lg ${i % 2 === 0 ? 'picture-deformation-r lg:rounded-r-lg' : 'picture-deformation-l lg:rounded-l-lg'} `}
-      src={imageUrl}
+      src={imagePath(filename)}
       alt={imageAlt}
+      loading='lazy'
     />
   </div>
 )
@@ -18,8 +20,8 @@ const ContentElement = ({ field, i }) => {
     target: wrapperRef,
     offset: ['start end', 'center center']
   })
-  const fromRight = useTransform(scrollYProgress, [0, 1], ['-20%', '0%'])
-  const fromLeft = useTransform(scrollYProgress, [0, 1], ['20%', '0%'])
+  const fromRight = useTransform(scrollYProgress, [0, 1], ['-50%', '0%'])
+  const fromLeft = useTransform(scrollYProgress, [0, 1], ['50%', '0%'])
 
   const isOdd = i % 2 !== 0
 
@@ -29,7 +31,7 @@ const ContentElement = ({ field, i }) => {
       ref={wrapperRef}
       style={{ translateX: isOdd ? fromRight : fromLeft }}
     >
-      {isOdd && <ImageContent imageUrl={field.image} imageAlt={field.alt} i={i} />}
+      {isOdd && <ImageContent filename={field.filename} imageAlt={field.alt} i={i} />}
       <div className='absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 lg:relative lg:top-auto lg:right-auto lg:translate-y-1/4 lg:translate-x-0 z-10 lg:w-1/2 '>
         <div className='flex flex-col h-full text-center items-center rounded-lg px-12 py-3 bg-slate-800/70 lg:bg-transparent'>
           <h1 className='text-4xl tracking-tight font-extrabold text-slate-100 lg:text-left xl:text-6xl'>
@@ -82,7 +84,7 @@ const ContentElement = ({ field, i }) => {
           </div>
         </div>
       </div>
-      {i % 2 === 0 && <ImageContent imageUrl={field.image} imageAlt={field.alt} i={i} />}
+      {i % 2 === 0 && <ImageContent filename={field.image} imageAlt={field.alt} i={i} />}
     </motion.div >
   )
 }

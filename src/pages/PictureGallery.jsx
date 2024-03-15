@@ -1,22 +1,31 @@
 import React from 'react';
 import { galeryImages } from '../constants/galery-pictures';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+import { imagePath } from '../helpers/helpers';
 
 const PictureGallery = () => {
+  window.scrollTo({
+    top: 0
+  })
   return (
     <>
+      <Helmet>
+        <title>Fermeture Sans Souci - Votre professionnel de la fermeture en Essonnes</title>
+        <meta name="description" content="Voici nos réalisations ! Faites le choix de nos prochains travaux parmis notre grande gamme de partenaires." />
+      </Helmet>
       <motion.section
         variants={wrapperVariants}
         initial='hidden'
         animate='show'
         className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-20 pb-10 gap-6'
       >
-        {galeryImages.map((image, i) => (
+        {galeryImages.map((img, i) => (
           <motion.img
             key={i}
             variants={imageVariants}
-            src={'/assets/' + image.url + '.png'}
-            alt={image.url}
+            src={imagePath(img.filename)}
+            alt={img.alt}
             className='hover:rounded-lg ease-in-out transition-all duration-500 scale-95 hover:scale-105'
           />
         ))}
@@ -36,8 +45,8 @@ before:transition-transform before:duration-1000
 before:content-[&quot;]
 
 hover:scale-100 hover:before:scale-y-[2.5]'
-> */}
-{/* <div className='relative z-0 flex items-center overflow-hidden rounded-lg scale-95
+>
+ <div className='relative z-0 flex items-center overflow-hidden rounded-lg scale-95
           transition-all duration-500
           
           before:absolute before:inset-0

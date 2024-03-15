@@ -1,101 +1,138 @@
 export const galeryImages = [
   {
-    url: "fenetre_1",
+    filename: "fenetre_1",
+    alt: "Image d'une fenêtre"
   },
   {
-    url: "fenetre_2",
+    filename: "fenetre_2",
+    alt: "Image d'une fenêtre"
   },
   {
-    url: "fenetre_3",
+    filename: "fenetre_3",
+    alt: "Image d'une fenêtre"
   },
   {
-    url: "fenetre_4",
+    filename: "fenetre_4",
+    alt: "Image d'une fenêtre"
   },
   {
-    url: "fenetre_5",
+    filename: "fenetre_5",
+    alt: "Image d'une fenêtre"
   },
   {
-    url: "fenetre_6",
+    filename: "fenetre_6",
+    alt: "Image d'une fenêtre"
   },
   {
-    url: "fenetre_7",
+    filename: "fenetre_7",
+    alt: "Image d'une fenêtre"
   },
   {
-    url: "fenetre_8",
+    filename: "fenetre_8",
+    alt: "Image d'une fenêtre"
   },
   {
-    url: "fenetre_9",
+    filename: "fenetre_9",
+    alt: "Image d'une fenêtre"
   },
   {
-    url: "fenetre_10",
+    filename: "fenetre_10",
+    alt: "Image d'une fenêtre"
   },
   {
-    url: "portail_1",
+    filename: "portail_1",
+    alt: "Image d'un portail"
   },
   {
-    url: "portail_2",
+    filename: "portail_2",
+    alt: "Image d'un portail"
   },
   {
-    url: "portail_3",
+    filename: "portail_3",
+    alt: "Image d'un portail"
   },
   {
-    url: "portail_4",
+    filename: "porte_entree_1",
+    alt: "Image d'une porte d'entrée"
   },
   {
-    url: "porte_entree_1",
+    filename: "porte_entree_2",
+    alt: "Image d'une porte d'entrée"
   },
   {
-    url: "porte_entree_2",
+    filename: "porte_entree_3",
+    alt: "Image d'une porte d'entrée"
   },
   {
-    url: "porte_entree_3",
+    filename: "porte_entree_4",
+    alt: "Image d'une porte d'entrée"
   },
   {
-    url: "porte_entree_4",
+    filename: "porte_garage_1",
+    alt: "Image d'une porte de garage"
   },
   {
-    url: "porte_garage_1",
+    filename: "porte_garage_2",
+    alt: "Image d'une porte de garage"
   },
   {
-    url: "porte_garage_2",
+    filename: "porte_garage_3",
+    alt: "Image d'une porte de garage"
   },
   {
-    url: "porte_garage_3",
+    filename: "porte_garage_4",
+    alt: "Image d'une porte de garage"
   },
   {
-    url: "porte_garage_4",
+    filename: "veranda_1",
+    alt: "Image d'une veranda"
   },
   {
-    url: "veranda_1",
+    filename: "veranda_2",
+    alt: "Image d'une veranda"
   },
   {
-    url: "veranda_2",
+    filename: "veranda_3",
+    alt: "Image d'une veranda"
   },
   {
-    url: "veranda_3",
+    filename: "veranda_4",
+    alt: "Image d'une veranda"
   },
   {
-    url: "veranda_4",
+    filename: "volet_1",
+    alt: "Image d'un volet"
   },
   {
-    url: "volet_1",
+    filename: "volet_roulant_1",
+    alt: "Image d'un volet roulant"
   },
   {
-    url: "volet_roulant_1",
+    filename: "volet_roulant_2",
+    alt: "Image d'un volet roulant"
   },
   {
-    url: "volet_roulant_2",
+    filename: "volet_roulant_3",
+    alt: "Image d'un volet roulant"
   },
   {
-    url: "volet_roulant_3",
+    filename: "volet_roulant_4",
+    alt: "Image d'un volet roulant"
   },
   {
-    url: "volet_roulant_4",
+    filename: "volet_roulant_5",
+    alt: "Image d'un volet roulant"
   },
   {
-    url: "volet_roulant_5",
+    filename: "volet_roulant_6",
+    alt: "Image d'un volet roulant"
   },
   {
-    url: "volet_roulant_6",
+    filename: "pergola_1",
+    alt: "Image d'une pergola"
   },
+  {
+    filename: "pergola_2",
+    alt: "Image d'une pergola"
+  }
 ]

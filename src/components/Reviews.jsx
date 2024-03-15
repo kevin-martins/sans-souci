@@ -12,7 +12,8 @@ const Star = ({ fill, i }) => {
       {/* Use the linear gradient as a mask */}
       <mask id={`fillMask${fill}`}>
         <rect x="0" y="0" width={`${fill * 100}%`} height="100%" fill="#FFFFFF" />
-        <rect x="0" y="0" width={`${(1 - fill) * 100}%`} height="100%" fill="#FFFFFF" />
+        <rect x="0" y="0" width={`${(fill) * 100}%`} height="100%" fill="#FFFFFF" />
+        <rect x={`${(fill) * 100}%`} y="0" width={`${(1 - fill) * 100}%`} height="100%" fill="#222222" />
       </mask>
 
       {/* Star shape with mask applied */}
@@ -22,34 +23,31 @@ const Star = ({ fill, i }) => {
 };
 
 const CustomerReview = ({ rating, username, userProfile, publishedTime, feedback }) => {
-  // Function to calculate time since the review was published
   const calculateTimeSincePublished = (publishedTime) => {
-    const currentTime = new Date();
-    const reviewTime = new Date(publishedTime);
-    const difference = Math.floor((currentTime - reviewTime) / (1000 * 60 * 60 * 24)); // Difference in days
+    const currentTime = new Date()
+    const reviewTime = new Date(publishedTime)
+    const difference = Math.floor((currentTime - reviewTime) / (1000 * 60 * 60 * 24))
     if (difference === 0) {
-      return 'Today';
+      return 'Today'
     } else if (difference === 1) {
-      return '1 day ago';
+      return '1 day ago'
     } else {
-      return `${difference} days ago`;
+      return `${difference} days ago`
     }
-  };
+  }
+  const formattedTime = calculateTimeSincePublished(publishedTime)
 
-  // Convert the published time to a readable format (e.g., "3 days ago")
-  const formattedTime = calculateTimeSincePublished(publishedTime);
-
-  // Function to generate star icons based on the rating
   const renderStars = (rating) => {
     const stars = [];
     const rest = rating - Math.floor(rating)
+    console.log(rest)
     for (let i = 0; i < 5; i++) {
       if (i < Math.floor(rating)) {
-        stars.push(<Star fill={1} />);
-      } else if  (i < Math.ceil(rating)) {
-        stars.push(<Star fill={rest} />);
+        stars.push(<Star fill={1} />)
+      } else if  (i < Math.ceil(rating) && rest > 0) {
+        stars.push(<Star fill={rest} />)
       } else {
-        stars.push(<Star fill={0} />);
+        stars.push(<Star fill={0} />)
       }
     }
     return stars;
@@ -58,7 +56,7 @@ const CustomerReview = ({ rating, username, userProfile, publishedTime, feedback
   return (
     <div className="w-72 h-max p-4 shadow-md transform hover:translate-x-2 hover:-translate-y-2 hover:scale-105 transition duration-300">
       <div className="flex items-center mb-2">
-        <img className="w-10 h-10 rounded-full mr-2" src={userProfile} alt="User Profile" />
+        <img className="w-10 h-10 rounded-full mr-2" src={userProfile} alt="User Profile" loading='lazy' />
         <div className='grid grid-cols-2'>
           <p>{username}</p>
           <p className="text-sm text-right font-medium text-slate-500">{formattedTime}</p>
@@ -74,7 +72,7 @@ const CustomerReview = ({ rating, username, userProfile, publishedTime, feedback
 
 const Reviews = () => {
   return (
-    <div className="w-max flex gap-3 mx-auto">
+    <section className="w-max flex gap-3 mx-auto">
       {Array.from({ length: 3 }).map((_, i) => (
         <CustomerReview
           key={i}
@@ -85,7 +83,7 @@ const Reviews = () => {
           feedback="This product is amazing! I'm really satisfied with my purchase.This product is amazing! I'm really satisfied with my purchase.This product is amazing! I'm really satisfied with my purchase."
         />
       ))}
-    </div>
+    </section>
   )
 }
 

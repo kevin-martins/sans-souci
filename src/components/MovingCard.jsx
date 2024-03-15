@@ -46,17 +46,8 @@ const MovingCard = ({ children }) => {
         rotateX,
         rotateY,
       }}
-      className="relative h-44 lg:h-[350px] lg:w-[548px] sm:w-96 mx-auto w-80 rounded-xl bg-slate-900/90"// lg:w-[45rem] sm:w-[30rem] xs:w-[25rem] w-72 
+      className="relative h-44 lg:h-[350px] lg:w-[548px] sm:w-96 mx-auto w-80 rounded-xl bg-slate-900/70 "// lg:w-[45rem] sm:w-[30rem] xs:w-[25rem] w-72 
     >
-      {/* <div
-        style={{
-          transform: "translateZ(75px)",
-          transformStyle: "preserve-3d",
-        }}
-        className="absolute lg:inset-8 inset-4 grid place-content-center rounded-xl shadow-lg bg-slate-100"// bg-gradient-to-br from-purple-900 to-purple-800
-      >
-        {children}
-      </div> */}
       <div
         style={{
           transform: "translateZ(120px)",
@@ -65,15 +56,16 @@ const MovingCard = ({ children }) => {
         className="absolute lg:inset-6 inset-4 grid place-content-center rounded-xl shadow-lg bg-black p-5"
       >
         <img
-          src="/logo.png"
+          src={process.env.PUBLIC_URL + "/logo.png"}
           alt="ddd"
           style={{
             width: "100%",
             height: "100%",
           }}
-          className="relative rounded-xl"// bg-gradient-to-br from-purple-900 to-purple-800
+          className="relative rounded-xl"
+          loading='lazy'
         />
-        <p
+        <span
           style={{
             transform: "translateZ(15px)",
             transformStyle: "preserve-3d",
@@ -81,17 +73,17 @@ const MovingCard = ({ children }) => {
           className="absolute text-3xl text-slate-100 right-0 top-0 px-10 tracking-wide"
         >
           01.60.88.94.94
-        </p>
+        </span>
         <p
           style={{
             transform: "translateZ(10px)",
             transformStyle: "preserve-3d",
           }}
-          className="absolute text-sm text-slate-100 right-0 top-10 px-8 tracking-wide"
+          className="absolute text-sm text-slate-100 right-2 top-10 px-8 tracking-wide"
         >
           Une entreprise artisanale à votre<br /><span className="pl-5"> service depuis 1998</span>
         </p>
-        <p
+        <address
           style={{
             transform: "translateZ(10px)",
             transformStyle: "preserve-3d",
@@ -99,16 +91,16 @@ const MovingCard = ({ children }) => {
           className="absolute text-lg text-slate-100 left-0 bottom-0 px-5 tracking-wide"
         >
           75 Bd de Fontainebleau<br /><span>91100 Corbeil-Essonnes</span>
-        </p>
-        <p
+        </address>
+        <span
           style={{
             transform: "translateZ(10px)",
             transformStyle: "preserve-3d",
           }}
-          className="absolute text-lg text-red-500 drop-shadow-[0_1.2px_1.2px_rgb(255,255,255)] right-0 bottom-0 px-9 tracking-wide"
+          className="absolute text-lg text-red-500 right-0 bottom-0 px-9 tracking-wide"
         >
           DEVIS GRATUIT
-        </p>
+        </span>
       </div>
     </motion.div>
   );
